@@ -157,9 +157,9 @@ class SAM2UNet(nn.Module):
         self.up2 = (Up(128, 64))
         self.up3 = (Up(128, 64))
         self.up4 = (Up(128, 64))
-        self.side1 = nn.Conv2d(64, 1, kernel_size=1)
-        self.side2 = nn.Conv2d(64, 1, kernel_size=1)
-        self.head = nn.Conv2d(64, 1, kernel_size=1)
+        self.side1 = nn.Conv2d(64, 4, kernel_size=1)
+        self.side2 = nn.Conv2d(64, 4, kernel_size=1)
+        self.head = nn.Conv2d(64, 4, kernel_size=1)
 
     def forward(self, x):
         x1, x2, x3, x4 = self.encoder(x)
